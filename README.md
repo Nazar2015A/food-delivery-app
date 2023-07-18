@@ -1,1 +1,1 @@
-https://react-food-delivery-js.netlify.app/home
+https://react-food-delivery-js.netlify.app
