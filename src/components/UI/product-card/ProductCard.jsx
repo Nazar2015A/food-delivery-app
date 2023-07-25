@@ -9,10 +9,8 @@ import { cartActions } from "../../../store/shopping-cart/cartSlice";
 const ProductCard = (props) => {
   const { id, title, image01, price } = props.item;
   const dispatch = useDispatch();
-  let arr = []
   const cartItems = useSelector((state) => state.cart.cartItems);
   const cartTotal = useSelector((state) => state.cart.totalAmount);
-  console.log(cartTotal)
 
   const [flag, setFlag] = useState(1)
   const addToCart = () => {

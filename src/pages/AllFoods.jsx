@@ -11,9 +11,9 @@ import "../styles/pagination.css";
 
 const AllFoods = () => {
   const [searchTerm, setSearchTerm] = useState("");
-
+  const [select, setSelect] = useState('');
+  console.log(select)
   const [pageNumber, setPageNumber] = useState(0);
-
   const productPerPage = 8;
   const visitedPage = pageNumber * productPerPage;
   const displayPage = products.slice(visitedPage, visitedPage + productPerPage);
@@ -23,6 +23,7 @@ const AllFoods = () => {
   const changePage = ({ selected }) => {
     setPageNumber(selected);
   };
+  console.log(displayPage)
 
   return (
     <Helmet title="All-Foods">
@@ -47,8 +48,8 @@ const AllFoods = () => {
 
             <Col lg="6" md="6" sm="6" className="mb-5">
               <div className="sorting__widget text-end">
-                <select className="w-50">
-                  <option>Default</option>
+                <select className="w-50" onChange={(e)=>setSelect(e.target.value)} value={select}>
+                  <option value="default">Default</option>
                   <option value="ascending">Alphabetically, A-Z</option>
                   <option value="descending">Alphabetically, Z-A</option>
                   <option value="high-price">High Price</option>
@@ -64,6 +65,20 @@ const AllFoods = () => {
                 }
                 if (item.title.toLowerCase().includes(searchTerm.toLowerCase()))
                   return item;
+              })
+              .toSorted((a,b) => {
+                if (select == 'ascending') {
+                  return a.title.localeCompare(b.title)
+                }
+                if (select == 'descending') {
+                  return b.title.localeCompare(a.title)
+                }
+                if (select == 'high-price') {
+                  return b.price - a.price
+                }
+                if (select == 'low-price') {
+                  return a.price - b.price
+                }
               })
               .map((item) => (
                 <Col lg="3" md="4" sm="6" xs="6" key={item.id} className="mb-4">
