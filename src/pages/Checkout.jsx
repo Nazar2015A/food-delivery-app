@@ -32,7 +32,6 @@ const Checkout = () => {
     };
 
     shippingInfo.push(userShippingAddress);
-    console.log(shippingInfo);
     setEnterName("");
     setEnterEmail("");
     setEnterNumber("");

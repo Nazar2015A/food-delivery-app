@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import CommonSection from "../components/UI/common-section/CommonSection";
 import Helmet from "../components/Helmet/Helmet";
@@ -8,7 +8,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { Container, Row, Col } from "reactstrap";
 import { cartActions } from "../store/shopping-cart/cartSlice";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);

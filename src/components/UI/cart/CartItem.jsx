@@ -12,7 +12,6 @@ const CartItem = ({ item }) => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.cartItems);
   localStorage.setItem('cartItems', JSON.stringify(cartItems))
-  console.log(cartItems)
   
 
 

@@ -3,7 +3,6 @@ import { createSlice } from "@reduxjs/toolkit";
 const newCorsin = JSON.parse(localStorage.getItem('cartItems'));
 const newQuantity = JSON.parse(localStorage.getItem('cartQuantity'));
 const newAmount = JSON.parse(localStorage.getItem('cartTotal'));
-console.log(newCorsin)
 
 const initialState = {
   cartItems: newCorsin ? newCorsin : [],

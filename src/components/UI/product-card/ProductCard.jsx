@@ -23,7 +23,6 @@ const ProductCard = (props) => {
       })
     );
     setFlag(prev => prev + 1)
-    console.log(flag)
   };
   useEffect(() => {
     // arr = cartItems

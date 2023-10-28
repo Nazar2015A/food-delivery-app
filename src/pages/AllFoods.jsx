@@ -12,7 +12,6 @@ import "../styles/pagination.css";
 const AllFoods = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [select, setSelect] = useState('');
-  console.log(select)
   const [pageNumber, setPageNumber] = useState(0);
   const productPerPage = 8;
   const visitedPage = pageNumber * productPerPage;
@@ -23,7 +22,6 @@ const AllFoods = () => {
   const changePage = ({ selected }) => {
     setPageNumber(selected);
   };
-  console.log(displayPage)
 
   return (
     <Helmet title="All-Foods">
