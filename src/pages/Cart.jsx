@@ -2,6 +2,7 @@ import React from "react";
 
 import CommonSection from "../components/UI/common-section/CommonSection";
 import Helmet from "../components/Helmet/Helmet";
+
 import "../styles/cart-page.css";
 import { useSelector, useDispatch } from "react-redux";
 import { Container, Row, Col } from "reactstrap";
@@ -25,7 +26,7 @@ const Cart = () => {
         </td>
         <td className="text-center">{title}</td>
         <td className="text-center">${price}</td>
-        <td className="text-center">{quantity}px</td>
+        <td className="text-center">{quantity}x</td>
         <td className="text-center cart__item-del">
           <i className="ri-delete-bin-line" onClick={deleteItem}></i>
         </td>
